@@ -82,6 +82,9 @@ class RestaurantTest {
 
     @Test
     public void selecting_an_item_from_menu_should_return_total_cost(){
-
+        setMenu();
+        List<Item> items = restaurant.getMenu();
+        int totalCostToCustomer = restaurant.calculateTotalCost(items);
+        assertThat(totalCostToCustomer,equalTo(388));
     }
 }
